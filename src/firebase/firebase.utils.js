@@ -24,9 +24,17 @@ export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
 
-//CREATE FLAME / TWEET
 
-export const createFlame = async (flame, userid) => {
+//LISTEN FOR FLAME UPDATE
+// export const listenForFlames = async () => {
+//   const flameRef = firestore.collection('flames')
+//   flameRef.onSnapshot(flames => {
+//     console.log(flames.docs.map(flame => flame.data()))
+//   })
+// }
+
+//GET FLAMES / TWEETS
+export const getFlames = async (flame, userid) => {
   const flamesRef = firestore.collection(`flames`);
 
   const flames = await flamesRef.get();
