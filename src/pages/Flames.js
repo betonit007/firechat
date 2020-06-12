@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { firestore } from "../firebase/firebase.utils";
+import Input from "../components/input/Input";
 
 const Flames = () => {
   const [flames, setFlames] = useState([]);
@@ -12,18 +13,15 @@ const Flames = () => {
   }, []);
 
   return (
-      <>
-        {flames.length > 0 ? 
-          (<div className='allFlames'>
-               {flames.map(flame=> (flame.flame))}
-          </div>) 
-          : 
-          (<div className='loading-flames'>
-              Loading...
-          </div>)
-          }
-      </>
-  )
+    <div className="flames-body">
+      {flames.length > 0 ? (
+        <div className="allFlames">{flames.map((flame) => flame.flame)}</div>
+      ) : (
+        <div className="loading-flames">No flames yet...</div>
+      )}
+      <Input />
+    </div>
+  );
 };
 
 export default Flames;

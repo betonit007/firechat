@@ -1,6 +1,8 @@
 body {
     font-family: 'Roboto', sans-serif;
-   
+    background-color: aqua;
+    padding: 0;
+    margin: 0;
 }
 
 a {
@@ -10,4 +12,9 @@ a {
 
 * {
     box-sizing: border-box;
+}
+
+.main-container {
+    background-color: bisque;
+    height: 100vh;
 }

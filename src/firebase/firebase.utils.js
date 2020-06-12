@@ -34,12 +34,27 @@ export default firebase;
 // }
 
 //GET FLAMES / TWEETS
-export const getFlames = async (flame, userid) => {
+export const getFlames = async () => {
   const flamesRef = firestore.collection(`flames`);
 
   const flames = await flamesRef.get();
   console.log(flames.docs.map(doc=> doc.data()));
 };
+
+//CREATE FLAME
+export const createFlame = async flame => {
+  try {
+    const flameRef = firestore.collection('flames')
+    const createdAt = new Date();
+    await flameRef.add({ 
+      flame,
+      createdAt
+    })
+
+  } catch (err) {
+    console.log(err.message)
+  }
+}
 
 //VERIFY AND USER / CREATE USER IF DOESN'T EXIT
 export const createUserProfileDocument = async (userAuth, additionalData) => {
