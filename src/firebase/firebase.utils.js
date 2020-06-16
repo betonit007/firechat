@@ -24,16 +24,7 @@ export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
 
-
-//LISTEN FOR FLAME UPDATE
-// export const listenForFlames = async () => {
-//   const flameRef = firestore.collection('flames')
-//   flameRef.onSnapshot(flames => {
-//     console.log(flames.docs.map(flame => flame.data()))
-//   })
-// }
-
-//GET FLAMES / TWEETS
+//GET FLAMES
 export const getFlames = async () => {
   const flamesRef = firestore.collection(`flames`);
 
@@ -56,7 +47,7 @@ export const createFlame = async flame => {
   }
 }
 
-//VERIFY AND USER / CREATE USER IF DOESN'T EXIT
+//VERIFY USER / CREATE USER IF DOESN'T EXIT
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   console.log(userAuth);
   if (!userAuth) return;
