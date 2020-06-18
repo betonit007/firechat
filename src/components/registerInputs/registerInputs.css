@@ -1,0 +1,21 @@
+.form-body form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    width: 350px;
+}
+
+.form-body form input {
+    height:30px;
+    width: 350px;
+    margin: 10px;
+    border: 1px solid rgba(145, 140, 140, 0.61);
+    border-radius: 4px;
+}
+
+#register-btn {
+    background-image: linear-gradient(315deg, #a40606 0%, #d98324 74%);
+    cursor: pointer;
+    width: 190px;
+}

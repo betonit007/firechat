@@ -1,0 +1,28 @@
+.landing-body {
+    height: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-body h2 {
+    font-weight: 300;
+}
+
+.google-signin {
+    background-color: #4C8BF5;
+    color: #fff;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.397);
+    font-weight: 620000;
+    border: none;
+}
+
+.google-icon {
+    border: 1px solid #fff;
+    padding: 2px 3px;
+    border-radius: 4px;
+}
+

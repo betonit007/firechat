@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { firestore } from "../firebase/firebase.utils";
-import Input from "../components/input/Input";
+import { firestore } from "../../firebase/firebase.utils";
+import Input from "../../components/input/Input";
 
 const Flames = () => {
   const [flames, setFlames] = useState([]);

@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/navbar/Navbar";
-import Flames from "./pages/Flames";
-import Landing from "./pages/Landing";
+import Flames from "./pages/Flames/Flames";
+import Landing from "./pages/Landing/Landing";
 import PrivateRoute from "./routing/PrivateRoute";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 
 import "./App.css";
 
@@ -34,22 +39,21 @@ const App = () => {
 
   return (
     <Router>
-      <div className="main-container">
+      <div className="main">
         <Navbar authState={authState} />
-        <div className="main-body">
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={() => authState ? <Redirect to='/flames'/> : <Landing />}/>
-            <PrivateRoute
-              exact
-              path="/flames"
-              component={Flames}
-              authState={authState}
-            />
-          </Switch>
-        </div>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (authState ? <Redirect to="/flames" /> : <Landing />)}
+          />
+          <PrivateRoute
+            exact
+            path="/flames"
+            component={Flames}
+            authState={authState}
+          />
+        </Switch>
       </div>
     </Router>
   );

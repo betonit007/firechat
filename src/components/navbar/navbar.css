@@ -1,5 +1,9 @@
 .nav-body {
     height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
     background-color: #a40606;
     background-image: linear-gradient(315deg, #a40606 0%, #d98324 74%);
     border-bottom: black 1px solid;
