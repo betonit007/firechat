@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { Link } from 'react-router-dom'
 
-import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
+import { auth } from "../../firebase/firebase.utils";
 
 import "./navbar.css";
 
@@ -8,7 +9,7 @@ const Navbar = ({ authState }) => {
   return (
     <div className="nav-body">
       <div id="nav-wrapper">
-        Fire <i className="fa fa-fire"></i>Chat
+        Fire <Link to='/'><i className="fa fa-fire"></i>Chat</Link>
         {authState && (
           <button id="signout" onClick={() => auth.signOut()}>
             Signout

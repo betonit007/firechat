@@ -33,13 +33,15 @@ export const getFlames = async () => {
 };
 
 //CREATE FLAME
-export const createFlame = async flame => {
+export const createFlame = async (flame, userId) => {
+  console.log(flame, userId)
   try {
     const flameRef = firestore.collection('flames')
     const createdAt = new Date();
     await flameRef.add({ 
       flame,
-      createdAt
+      createdAt,
+      userId
     })
 
   } catch (err) {
@@ -49,7 +51,7 @@ export const createFlame = async flame => {
 
 //VERIFY USER / CREATE USER IF DOESN'T EXIT
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-  console.log(userAuth);
+ 
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);

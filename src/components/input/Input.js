@@ -1,30 +1,31 @@
-import React, { useState } from 'react'
-import { createFlame } from '../../firebase/firebase.utils'
+import React from "react";
+import { useForm } from "react-hook-form";
+import { createFlame } from "../../firebase/firebase.utils";
 
-import './input.css'
+import "./input.css";
 
-const Input = () => {
+const Input = ({ authState }) => {
+  
+  const { register, handleSubmit, errors } = useForm(); //Intialize react-hook-form
 
-    const [ input, setInput ] = useState("")
+  const onSubmit = (data) => {
+    
+   createFlame(data.flame, authState.currentUser.id)
+  };
 
-    const handleChange = e => {
-        setInput(e.target.value)
-    }
-
-    const handleSubmit = e => {
-      e.preventDefault()
-      createFlame(input)
-    }
- 
-    return (
-      <form onSubmit={handleSubmit}>
-        <label>
-          Flame:
-          <input type="text" value={input} placeholder='Enter Flame..' onChange={e => handleChange(e)} />
-        </label>
-        <input type="submit" value="Submit" />
+  return (
+    <div className="form-body">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+          name="flame"
+          placeholder="Enter Flame..."
+          ref={register({ required: true })}
+        />
+        {errors.flame && "Please enter a flame."}
+        <input className='flame-btn' type="submit" value='&#128367;'/>
       </form>
-    )
-}
+    </div>
+  );
+};
 
-export default Input
+export default Input;

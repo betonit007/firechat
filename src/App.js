@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./components/navbar/Navbar";
 import Flames from "./pages/Flames/Flames";
 import Landing from "./pages/Landing/Landing";
+import Register from './pages/Register/Register'
 import PrivateRoute from "./routing/PrivateRoute";
 import {
   BrowserRouter as Router,
@@ -35,7 +36,6 @@ const App = () => {
       return () => unsubscribeFromAuth(); //The returned function will be called just before every rerendering of the component
     });
   }, []);
-  console.log(authState);
 
   return (
     <Router>
@@ -46,6 +46,11 @@ const App = () => {
             exact
             path="/"
             render={() => (authState ? <Redirect to="/flames" /> : <Landing />)}
+          />
+           <Route
+            exact
+            path="/register"
+            render={() => (authState ? <Redirect to="/flames" /> : <Register />)}
           />
           <PrivateRoute
             exact
