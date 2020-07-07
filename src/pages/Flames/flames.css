@@ -9,7 +9,9 @@
 }
 
 .allFlames {
-    max-width: 600px;
+    max-width: 800px;
+    min-width: 350px;
+    width: 90%;
     margin: 0 auto;
     overflow-y: scroll;
     /* overflow: hidden; */

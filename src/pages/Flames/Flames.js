@@ -22,7 +22,7 @@ const Flames = ({authState}) => {
     });
   }, []);
 
-  useEffect(() => {
+  useEffect(() => { //scroll to bottom of message div
     if (bottomDiv.current) {
       scrollToBottom()
     }
