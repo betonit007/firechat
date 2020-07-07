@@ -8,14 +8,14 @@ const Input = ({ authState }) => {
   
   const { register, handleSubmit, errors } = useForm(); //Intialize react-hook-form
 
-  const onSubmit = (data) => {
-    
-   createFlame(data.flame, authState.currentUser.id)
+  const onSubmit = (data, e) => { 
+   createFlame(data.flame, authState.currentUser)
+   e.target.reset()
   };
 
   return (
-    <div className="form-body">
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <div className="form-body flame-submit">
+      <form id='flame-input-form' onSubmit={handleSubmit(onSubmit)}>
         <input
           name="flame"
           placeholder="Enter Flame..."

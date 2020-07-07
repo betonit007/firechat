@@ -4,6 +4,17 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 10%;
+    padding: 10px;
+    position: relative;
 }
+
+.allFlames {
+    max-width: 600px;
+    margin: 0 auto;
+    overflow-y: scroll;
+    /* overflow: hidden; */
+}
+
+/* .allFlames:hover {
+    overflow-y: scroll;
+} */

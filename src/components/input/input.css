@@ -34,9 +34,17 @@
   color: #f5f5dc;
 }
 
+.form-body .flame-btn:active {
+  transform: scale(.90);
+}
+
 input {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.226);
   border: none;
+}
+
+#flame-input-form {
+  margin: 0 auto;
 }
 
 .fire-btn {
