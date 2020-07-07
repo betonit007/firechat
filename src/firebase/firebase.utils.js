@@ -1,5 +1,4 @@
 import firebase from "firebase/app";
-//import firebaseConfig from './firebaseCredentials.json'
 import "firebase/firestore";
 import "firebase/auth";
 
