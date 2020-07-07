@@ -1,17 +1,18 @@
 import firebase from "firebase/app";
+//import firebaseConfig from './firebaseCredentials.json'
 import "firebase/firestore";
 import "firebase/auth";
 
-var firebaseConfig = {
-  apiKey: "AIzaSyAoz75u--XFkgHL2lRbl977J7gXqgKQzfs",
-  authDomain: "firechat41.firebaseapp.com",
-  databaseURL: "https://firechat41.firebaseio.com",
-  projectId: "firechat41",
-  storageBucket: "firechat41.appspot.com",
-  messagingSenderId: "739839016077",
-  appId: "1:739839016077:web:abfe6ffeb48770fac976c4",
-  measurementId: "G-RXRBLDFHV3",
-};
+const firebaseConfig = {
+    apiKey: "AIzaSyAoz75u--XFkgHL2lRbl977J7gXqgKQzfs",
+    authDomain: "firechat41.firebaseapp.com",
+    atabaseURL: "https://firechat41.firebaseio.com",
+    projectId: "firechat41",
+    storageBucket: "firechat41.appspot.com",
+    messagingSenderId: "739839016077",
+    appId: "1:739839016077:web:abfe6ffeb48770fac976c4",
+    measurementId: "G-RXRBLDFHV3"
+}
 
 firebase.initializeApp(firebaseConfig);
 
