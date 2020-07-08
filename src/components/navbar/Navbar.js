@@ -6,7 +6,7 @@ import { auth } from "../../firebase/firebase.utils";
 import "./navbar.css";
 
 const Navbar = ({ authState }) => {
-  console.log(authState && authState.currentUser && authState.currentUser.displayName)
+  console.log(authState && authState.currentUser && authState.currentUser)
   return (
     <div className="nav-body">
       <div id="nav-wrapper">
@@ -16,7 +16,7 @@ const Navbar = ({ authState }) => {
         </Link>
         {authState &&
         <div className="user-name">
-          <p className='welcome'>Welcome</p><p>{authState && authState.currentUser && authState.currentUser.displayName.split(' ')[0]}</p>
+         <img src={authState && authState.currentUser && authState.currentUser.photoURL} alt=''/>
           <i className='fa fa-sign-out' onClick={() => auth.signOut()}></i>
         </div> 
         }

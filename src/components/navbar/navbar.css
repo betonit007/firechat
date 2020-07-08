@@ -37,8 +37,7 @@
     transform: scale(1.2);
   }
 
-  @media screen and (max-width: 600px) {
-    .user-name .welcome {
-      display: none;
-    }
-  }
+.user-name img {
+    height: 40px;
+    border-radius: 50%;
+}
