@@ -1,3 +1,4 @@
+//Change start script in package.json to this: "start": "serve -s build",
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/navbar/Navbar";
 import Flames from "./pages/Flames/Flames";

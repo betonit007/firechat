@@ -29,12 +29,12 @@ export const getFlames = async () => {
   const flamesRef = firestore.collection(`flames`);
 
   const flames = await flamesRef.get();
-  console.log(flames.docs.map(doc=> doc.data()));
+ 
 };
 
 //CREATE FLAME
 export const createFlame = async (flame, userId) => {
-  console.log(flame, userId)
+  
   try {
     const flameRef = firestore.collection('flames')
     const createdAt = new Date();

@@ -27,7 +27,7 @@ const SignInInputs = () => {
         {errors.email && <span>Please enter a valid email address.</span>}
         <input type="password" placeholder="Password" name="password" ref={register({required: true, minLength: 6})} />        
         {errors.password && <span>Password must be at least six characters long.</span>}
-        {credError && <span className="cred-error">Invalid user credentials</span> }
+        {credError && <p className="cred-error">Invalid user credentials</p> }
         <input className='fire-btn' type="submit" />
       </form>
     </div>
