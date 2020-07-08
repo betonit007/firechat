@@ -51,7 +51,7 @@ export const createFlame = async (flame, userId) => {
 
 //VERIFY USER / CREATE USER IF DOESN'T EXIT
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-  console.log(userAuth)
+  
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);

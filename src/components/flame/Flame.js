@@ -2,7 +2,7 @@ import React from "react";
 import "./flame.css";
 
 const Flame = ({ flame: { flame, userId }, authState: { currentUser } }) => {
-  console.log(currentUser);
+  
   if (userId.id === currentUser.id) {
     return (
       <div className="single-flame push-right">
